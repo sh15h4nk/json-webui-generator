@@ -1,4 +1,4 @@
-import { draft7 } from '../src/schema.json';
+import { draft8 } from '../src/schema-d8.json';
 import './App.css';
 import "bootstrap";
 import $ from "jquery";
@@ -16,7 +16,7 @@ import {
 
 import {widgets} from "@ui-schema/ds-material";
 
-const schema = createOrderedMap(draft7);
+const schema = createOrderedMap(draft8);
 // console.log(schema);
 const values = {};
 
