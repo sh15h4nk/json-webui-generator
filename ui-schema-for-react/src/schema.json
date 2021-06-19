@@ -55,6 +55,7 @@
       "location": {
         "title": "Location",
         "type": "object",
+        "widget": "Card",
         "description": "Position data such as a postal address or geographic coordinates",
         "required": ["city", "lat", "lon"],
         "properties": {
@@ -325,6 +326,7 @@
           },
           "address": {
             "type": "object",
+            "widget": "Card",
             "description": "The address of the place you meet",
             "properties": {
               "Name": {
@@ -358,6 +360,7 @@
       },
       "contact": {
         "type": "object",
+        "widget": "Card",
         "properties": {
           "email": {
             "title": "Email",
@@ -432,6 +435,7 @@
         "description": "These are lifetime events something like date of birth (and rebirth :-) of your community or other important milestones ",
         "items": {
           "type": "object",
+          "widget": "Card",
           "properties": {
             "description": {
               "title": "Description",
@@ -458,6 +462,7 @@
         "description": "Feeds you provide your community",
         "items": {
           "type": "object",
+          "widget": "Card",
           "properties": {
             "name": {
               "title": "Feed name",
@@ -495,6 +500,7 @@
       },
       "state": {
         "type": "object",
+        "widget": "Card",
         "description": "A collection of status-related data. Actual open/closed status, icons, last change timestamp etc.",
         "required": ["lastchange"],
         "properties": {
@@ -545,6 +551,7 @@
         "description": "Maps of nodes or topology your community provides",
         "items": {
           "type": "object",
+          "widget": "Card",
           "properties": {
             "url": {
               "title": "URL of the map",
@@ -599,6 +606,7 @@
         "description": "Services provided by your community",
         "items": {
           "type": "object",
+          "widget": "Card",
           "properties": {
             "serviceName": {
               "title": "Service Name",
@@ -625,11 +633,13 @@
       },
       "support": {
         "type": "object",
+        "widget": "Card",
         "description": "Support for your community, e.g. by a local club, and donations via campaigns e.g. by betterplace.de",
         "properties": {
           "club": {
             "title": "Supporting Club",
             "type": "object",
+            "widget": "Card",
             "properties": {
               "name": {
                 "title": "Club Name",
@@ -677,10 +687,12 @@
           },
           "donations": {
             "type": "object",
+            "widget": "Card",
             "title": "Donations",
             "properties": {
               "bankaccount": {
                 "type": "object",
+                "widget": "Card",
                 "title": "Bank Account",
                 "properties": {
                   "IBAN": {
@@ -704,6 +716,7 @@
                 "widget": "GenericList",
                 "items": {
                   "type": "object",
+                  "widget": "Card",
                   "properties": {
                     "provider": {
                       "title": "Campaign Provider",
@@ -732,6 +745,7 @@
       "socialprojects": {
         "title": "Refugees and social support projects",
         "type": "object",
+        "widget": "Card",
         "properties": {
           "number": {
             "title": "Number of projects",
@@ -754,6 +768,7 @@
       "privacy": {
         "title": "Privacy Policy",
         "type": "object",
+        "widget": "Card",
         "properties": {
           "policyurl": {
             "title": "Privacy Policy URL",
@@ -765,11 +780,13 @@
       },
       "techDetails": {
         "type": "object",
+        "widget": "Card",
         "id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
         "description": "Technical details of your community's Freifunk implementation",
         "properties": {
           "firmware": {
             "type": "object",
+            "widget": "Card",
             "properties": {
               "url": {
                 "title": "Firmware download",
@@ -828,6 +845,7 @@
             "widget": "GenericList",
             "items": {
               "type": "object",
+              "widget": "Card",
               "properties": {
                 "domainname": {
                   "type": "string",
@@ -850,6 +868,7 @@
           },
           "networks": {
             "type": "object",
+            "widget": "Card",
             "description": "Networks used by your community",
             "properties": {
               "ipv6": {
@@ -859,6 +878,7 @@
                 "description": "IPv6 networks used by your community",
                 "items": {
                   "type": "object",
+                  "widget": "Card",
                   "title": "ipv6 network object",
                   "properties": {
                     "network": {
@@ -875,6 +895,7 @@
                 "description": "IPv4 networks used by your community",
                 "items": {
                   "type": "object",
+                  "widget": "Card",
                   "title": "ipv4 network object",
                   "properties": {
                     "network": {

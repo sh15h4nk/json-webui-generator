@@ -34,6 +34,7 @@ function App() {
       <body>
       <link rel="stylesheet" href="../node_modules/bootstrap/css/lib" />
       <div className="container">
+        <form>
       <UIGenerator
         schema={schema}
 
@@ -42,7 +43,11 @@ function App() {
 
         widgets={widgets}
       />
+      <br></br>
+      <input type="submit" name="Submit" value="Submit"></input>
+      </form>
       </div>
+      <br></br><br></br>
     </body>
     </html>
   );
