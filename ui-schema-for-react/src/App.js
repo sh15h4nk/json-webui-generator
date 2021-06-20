@@ -1,4 +1,5 @@
-import { draft8 } from '../src/schema-d8.json';
+// import { dataschema } from '../src/schema-d8.json'; //draft 2019-09
+import { dataschema } from '../src/schema.json'; //draft 7 version
 import './App.css';
 import "bootstrap";
 import $ from "jquery";
@@ -16,7 +17,7 @@ import {
 
 import {widgets} from "@ui-schema/ds-material";
 
-const schema = createOrderedMap(draft8);
+const schema = createOrderedMap(dataschema);
 // console.log(schema);
 const values = {};
 
