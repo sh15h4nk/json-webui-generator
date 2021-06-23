@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/jsom-webui-generator/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/jsom-webui-generator/static/js/main.e7b7e968.chunk.js",
+    "main.js.map": "/jsom-webui-generator/static/js/main.e7b7e968.chunk.js.map",
+    "runtime-main.js": "/jsom-webui-generator/static/js/runtime-main.a3120cff.js",
+    "runtime-main.js.map": "/jsom-webui-generator/static/js/runtime-main.a3120cff.js.map",
+    "static/js/2.705b4446.chunk.js": "/jsom-webui-generator/static/js/2.705b4446.chunk.js",
+    "static/js/2.705b4446.chunk.js.map": "/jsom-webui-generator/static/js/2.705b4446.chunk.js.map",
+    "static/js/3.7f9595e5.chunk.js": "/jsom-webui-generator/static/js/3.7f9595e5.chunk.js",
+    "static/js/3.7f9595e5.chunk.js.map": "/jsom-webui-generator/static/js/3.7f9595e5.chunk.js.map",
+    "index.html": "/jsom-webui-generator/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/jsom-webui-generator/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.705b4446.chunk.js.LICENSE.txt": "/jsom-webui-generator/static/js/2.705b4446.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/jsom-webui-generator/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a3120cff.js",
+    "static/js/2.705b4446.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.e7b7e968.chunk.js"
+  ]
+}
