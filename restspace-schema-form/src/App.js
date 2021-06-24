@@ -8,6 +8,7 @@ function App() {
   var value = {};
   return (
     <div className="App">
+      <h3>RESTSPACE Schema Forms</h3>
       <SchemaForm
         schema={dataschema}
         value={value}
