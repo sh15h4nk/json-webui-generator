@@ -268,7 +268,7 @@
             "properties": {
                 "nodes": {
                     "type": "integer",
-                    "minimun": 0,
+                    "minimum": 0,
                     "title": "Active Nodes",
                     "description": "Number of active nodes. This field is predestined to be updated regularly, please see sample solutions for <a href=\"https://github.com/Freifunk-Mainz/changeffapi\" target=\"_blank\">Gluon</a> or <a href=\"https://github.com/freifunk/common.api.freifunk.net/blob/master/contrib/ffapi-update-nodes.py\" target=\"_blank\">OLSR</a>"
                 },
