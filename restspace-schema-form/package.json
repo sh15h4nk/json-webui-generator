@@ -2,14 +2,17 @@
   "name": "restspace-schema-form",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://sh15h4nk.github.io/json-webui-generator/restspace-schema-form",
   "dependencies": {
     "@restspace/schema-form": "^1.0.10",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^5.0.2",
     "css-what": "^5.0.1",
     "normalize-url": "^6.1.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
     "web-vitals": "^1.1.2"
@@ -18,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
