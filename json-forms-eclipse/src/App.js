@@ -20,7 +20,6 @@ function App() {
   return (
     <div className="App container">
       <br></br><br></br>
-      <center>
       <JsonForms
         schema={dataschema}
         data={data}
@@ -349,7 +348,6 @@ function App() {
       <Button onClick={() => setData({})} color='primary'>
         Clear form data
       </Button>
-      </center>
     </div>
   );
 }
