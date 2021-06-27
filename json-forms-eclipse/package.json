@@ -2,7 +2,7 @@
   "name": "json-forms-eclipse",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://sh15h4nk.github.io/json-webui-generator/json-forms-eclipse",
+  "homepage": "http://sh15h4nk.github.io/json-webui-generator",
   "dependencies": {
     "@jsonforms/core": "^2.5.2",
     "@jsonforms/examples": "^2.5.2",
