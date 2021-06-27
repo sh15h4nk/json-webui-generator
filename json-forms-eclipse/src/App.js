@@ -9,6 +9,8 @@ import { Generate } from '@jsonforms/core';
 import React, { useState } from 'react';
 import { JsonForms } from '@jsonforms/react';
 import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 var data = {}
 
@@ -16,7 +18,7 @@ var data = {}
 function App() {
   const [data, setData] = useState({});
   return (
-    <div className="App">
+    <div className="App container">
       <br></br><br></br>
       <center>
       <JsonForms
