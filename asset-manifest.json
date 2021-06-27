@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/json-webui-generator/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/json-webui-generator/static/js/main.08108fec.chunk.js",
-    "main.js.map": "/json-webui-generator/static/js/main.08108fec.chunk.js.map",
-    "runtime-main.js": "/json-webui-generator/static/js/runtime-main.a0a76ebd.js",
-    "runtime-main.js.map": "/json-webui-generator/static/js/runtime-main.a0a76ebd.js.map",
-    "static/js/2.f0156f09.chunk.js": "/json-webui-generator/static/js/2.f0156f09.chunk.js",
-    "static/js/2.f0156f09.chunk.js.map": "/json-webui-generator/static/js/2.f0156f09.chunk.js.map",
-    "static/js/3.f9580c73.chunk.js": "/json-webui-generator/static/js/3.f9580c73.chunk.js",
-    "static/js/3.f9580c73.chunk.js.map": "/json-webui-generator/static/js/3.f9580c73.chunk.js.map",
-    "index.html": "/json-webui-generator/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/json-webui-generator/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.f0156f09.chunk.js.LICENSE.txt": "/json-webui-generator/static/js/2.f0156f09.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/json-webui-generator/static/media/logo.6ce24c58.svg"
+    "main.css": "/json-webui-generator/json-forms-eclipse/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/json-webui-generator/json-forms-eclipse/static/js/main.90963988.chunk.js",
+    "main.js.map": "/json-webui-generator/json-forms-eclipse/static/js/main.90963988.chunk.js.map",
+    "runtime-main.js": "/json-webui-generator/json-forms-eclipse/static/js/runtime-main.996effa6.js",
+    "runtime-main.js.map": "/json-webui-generator/json-forms-eclipse/static/js/runtime-main.996effa6.js.map",
+    "static/css/2.7b1c032f.chunk.css": "/json-webui-generator/json-forms-eclipse/static/css/2.7b1c032f.chunk.css",
+    "static/js/2.236aa852.chunk.js": "/json-webui-generator/json-forms-eclipse/static/js/2.236aa852.chunk.js",
+    "static/js/2.236aa852.chunk.js.map": "/json-webui-generator/json-forms-eclipse/static/js/2.236aa852.chunk.js.map",
+    "static/js/3.8988459d.chunk.js": "/json-webui-generator/json-forms-eclipse/static/js/3.8988459d.chunk.js",
+    "static/js/3.8988459d.chunk.js.map": "/json-webui-generator/json-forms-eclipse/static/js/3.8988459d.chunk.js.map",
+    "index.html": "/json-webui-generator/json-forms-eclipse/index.html",
+    "static/css/2.7b1c032f.chunk.css.map": "/json-webui-generator/json-forms-eclipse/static/css/2.7b1c032f.chunk.css.map",
+    "static/css/main.9d5b29c0.chunk.css.map": "/json-webui-generator/json-forms-eclipse/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.236aa852.chunk.js.LICENSE.txt": "/json-webui-generator/json-forms-eclipse/static/js/2.236aa852.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/json-webui-generator/json-forms-eclipse/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a0a76ebd.js",
-    "static/js/2.f0156f09.chunk.js",
+    "static/js/runtime-main.996effa6.js",
+    "static/css/2.7b1c032f.chunk.css",
+    "static/js/2.236aa852.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.08108fec.chunk.js"
+    "static/js/main.90963988.chunk.js"
   ]
 }
