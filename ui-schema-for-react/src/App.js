@@ -4,6 +4,7 @@ import './App.css';
 import "bootstrap";
 import $ from "jquery";
 import 'bootstrap/dist/css/bootstrap.css';
+import { Button } from 'react-bootstrap';
 
 import React from "react";
 
@@ -23,19 +24,22 @@ const values = {};
 
 function App() {
 
-   const [store, setStore] = React.useState(() => createStore(createOrderedMap(values)));
+   const [store, setStore] = React.useState(() => createEmptyStore(schema.get('type')));
 
    const onChange = React.useCallback((storeKeys, scopes, updater, deleteOnEmpty, type) => {
        setStore(storeUpdater(storeKeys, scopes, updater, deleteOnEmpty, type))
+   }, [setStore])
+
+   const emptyStore = React.useCallback((storeKeys, scopes, updater, deleteOnEmpty, type) => {
+       setStore(storeUpdater(storeKeys, "", updater, deleteOnEmpty, type))
    }, [setStore])
 
 
   return (
     <html>
       <body>
-      <link rel="stylesheet" href="../node_modules/bootstrap/css/lib" />
-      <div className="container">
-        <form>
+      <div className="App container">
+      <form>
       <UIGenerator
         schema={schema}
 
@@ -44,9 +48,9 @@ function App() {
 
         widgets={widgets}
       />
-      <br></br>
-      <input type="submit" name="Submit" value="Submit"></input>
+      <Button type="submit">submit</Button>
       </form>
+      <Button onClick="">Clear</Button>
       </div>
       <br></br><br></br>
     </body>
