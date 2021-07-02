@@ -41,13 +41,13 @@
             },
 
             "lat": {
-                "type": "string",
+                "type": "number",
                 "title": "Latitude",
                 "description": "Lattitude of your city in decimal degrees"
             },
 
             "lon": {
-                "type": "string",
+                "type": "number",
                 "title": "Longitude",
                 "description": "Longitude of your city in decimal degrees"
             },
