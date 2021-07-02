@@ -18,6 +18,7 @@ function App() {
           schema={dataschema}
           formData={formData}
           onChange={e => setFormData(e.formData)}
+          liveValidate={"true"}
         />
         <Button onClick={()=> setFormData({
           "privacy": {

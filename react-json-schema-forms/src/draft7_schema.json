@@ -1,7 +1,7 @@
 {    
     "dataschema": {
         "$id": "https://freifunk.net/api-json-schema.json",
-        "$schema": "https://json-schema.org/draft-07/schema",
+        "$schema": "http://json-schema.org/draft-07/schema",
         "description": "Freifunk Community API X.X.X",
         "type": "object",
         "definitions": {
@@ -191,11 +191,7 @@
             },
 
             "url": {
-                "allOf": [
-                    { "$ref": "#/definitions/url" },
-                    { "title": "HomePage" },
-                    { "description": "The main website (http{s}://...)" }
-                ]
+                "$ref": "#/definitions/url"
             },
 
             "timeline": {
@@ -513,7 +509,6 @@
 
             "techDetails": {
                 "type": "object",
-                "$id": "http://wiki.freifunk.net/Freifunk_Firmware/%C3%9Cbersicht_Communities",
                 "description": "Technical details of your community's Freifunk implementation",
                 "properties": {
                     "firmware": {
