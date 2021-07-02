@@ -52,18 +52,6 @@
                 "description": "Longitude of your city in decimal degrees"
             },
 
-            "location": {
-                "type": "object",
-                "properties": {
-                    "city": { "$ref": "#/definitions/city" },
-                    "country": { "$ref": "#/definitions/country" },
-                    "address": { "$ref": "#/definitions/address" },
-                    "lat": { "$ref": "#/definitions/lat" },
-                    "lon": { "$ref": "#/definitions/lon" }
-                },
-                "required": ["city", "lat", "lon" ]
-            },
-
             "email": {
                 "type": "string",
                 "title": "Email",
@@ -138,7 +126,11 @@
                 "type": "object",
                 "minProperties": 1,
                 "properties": {
-                    "email": { "$ref": "#/definitions/email" },
+                    "email": { 
+                        "$ref": "#/definitions/email",
+                        "title": "Email",
+                        "description": "Email address to which other people can contact your community (user@domain.com)"
+                    },
                     "facebook": {
                         "type": "string",
                         "title": "facebook",
@@ -192,13 +184,17 @@
                         "title": "Webform",
                         "description": "URL to your community's contact form (http{s}://...)"
                     },
-                    "phone": {"$ref": "#/definitions/phone" }
+                    "phone": {
+                        "$ref": "#/definitions/phone",
+                        "title": "Phone",
+                        "description": "If your community has a phone number (e.g. +49 1234 567890 based on the E.123 notation)"
+                    }
                 }
             },
 
             "url": {
-                "$ref": "#/definitions/url",
                 "title": "HomePage",
+                "$ref": "#/definitions/url",
                 "description": "The main website (http{s}://...)"
             },
 
