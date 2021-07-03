@@ -1,26 +1,25 @@
 {
   "files": {
-    "main.css": "/json-webui-generator/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/json-webui-generator/static/js/main.db4d02db.chunk.js",
-    "main.js.map": "/json-webui-generator/static/js/main.db4d02db.chunk.js.map",
-    "runtime-main.js": "/json-webui-generator/static/js/runtime-main.98cdab56.js",
-    "runtime-main.js.map": "/json-webui-generator/static/js/runtime-main.98cdab56.js.map",
+    "main.css": "/json-webui-generator/static/css/main.8bcbd900.chunk.css",
+    "main.js": "/json-webui-generator/static/js/main.94b6a3e6.chunk.js",
+    "main.js.map": "/json-webui-generator/static/js/main.94b6a3e6.chunk.js.map",
+    "runtime-main.js": "/json-webui-generator/static/js/runtime-main.98371f65.js",
+    "runtime-main.js.map": "/json-webui-generator/static/js/runtime-main.98371f65.js.map",
     "static/css/2.7b1c032f.chunk.css": "/json-webui-generator/static/css/2.7b1c032f.chunk.css",
-    "static/js/2.79b8e58b.chunk.js": "/json-webui-generator/static/js/2.79b8e58b.chunk.js",
-    "static/js/2.79b8e58b.chunk.js.map": "/json-webui-generator/static/js/2.79b8e58b.chunk.js.map",
-    "static/js/3.8988459d.chunk.js": "/json-webui-generator/static/js/3.8988459d.chunk.js",
-    "static/js/3.8988459d.chunk.js.map": "/json-webui-generator/static/js/3.8988459d.chunk.js.map",
+    "static/js/2.405788b3.chunk.js": "/json-webui-generator/static/js/2.405788b3.chunk.js",
+    "static/js/2.405788b3.chunk.js.map": "/json-webui-generator/static/js/2.405788b3.chunk.js.map",
+    "static/js/3.a466e55b.chunk.js": "/json-webui-generator/static/js/3.a466e55b.chunk.js",
+    "static/js/3.a466e55b.chunk.js.map": "/json-webui-generator/static/js/3.a466e55b.chunk.js.map",
     "index.html": "/json-webui-generator/index.html",
     "static/css/2.7b1c032f.chunk.css.map": "/json-webui-generator/static/css/2.7b1c032f.chunk.css.map",
-    "static/css/main.9d5b29c0.chunk.css.map": "/json-webui-generator/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.79b8e58b.chunk.js.LICENSE.txt": "/json-webui-generator/static/js/2.79b8e58b.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/json-webui-generator/static/media/logo.6ce24c58.svg"
+    "static/css/main.8bcbd900.chunk.css.map": "/json-webui-generator/static/css/main.8bcbd900.chunk.css.map",
+    "static/js/2.405788b3.chunk.js.LICENSE.txt": "/json-webui-generator/static/js/2.405788b3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.98cdab56.js",
+    "static/js/runtime-main.98371f65.js",
     "static/css/2.7b1c032f.chunk.css",
-    "static/js/2.79b8e58b.chunk.js",
-    "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.db4d02db.chunk.js"
+    "static/js/2.405788b3.chunk.js",
+    "static/css/main.8bcbd900.chunk.css",
+    "static/js/main.94b6a3e6.chunk.js"
   ]
 }
