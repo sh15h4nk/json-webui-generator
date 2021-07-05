@@ -14,7 +14,7 @@
 				},
 				{
 					"type": "Control",
-					"scope": "#/properties/metacommunity"
+					"scope": "#/properties/url"
 				}
 			]
 		},
@@ -148,7 +148,15 @@
 		},
 		{
 			"type": "Control",
-			"scope": "#/properties/url"
+			"scope": "#/properties/metacommunity"
+		},
+		{
+			"type": "Control",
+			"scope": "#/properties/state"
+		},
+		{
+			"type": "Control",
+			"scope": "#/properties/services"
 		},
 		{
 			"type": "Control",
@@ -160,24 +168,16 @@
 		},
 		{
 			"type": "Control",
-			"scope": "#/properties/states"
-		},
-		{
-			"type": "Control",
 			"scope": "#/properties/nodeMaps"
-		},
-		{
-			"type": "Control",
-			"scope": "#/properties/services"
-		},
-		{
-			"type": "Control",
-			"scope": "#/properties/support"
 		},
 		{
 			"type": "Control",
 			"label": "Social Projects",
 			"scope": "#/properties/socialprojects"
+		},
+		{
+			"type": "Control",
+			"scope": "#/properties/support"
 		},
 		{
 			"type": "Control",
