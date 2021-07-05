@@ -19,18 +19,21 @@ const initialdata = require('../src/weimarnetz-api');
 function App() {
   const [data, setData] = useState({});
   return (
-    <div className="App container">
-      <JsonForms
-        schema={schema}
-        uischema={uischema}
-        data={data}
-        renderers={materialRenderers}
-        cells={materialCells}
-        onChange={({ errors, data }) => setData(data)}
-      />
+    <div className="App">
+      <h1>API Generator</h1>
+      <div className="container">
+        <JsonForms
+          schema={schema}
+          uischema={uischema}
+          data={data}
+          renderers={materialRenderers}
+          cells={materialCells}
+          onChange={({ errors, data }) => setData(data)}
+        />
 
-      <Button onClick={()=> setData(initialdata)}> Initiate </Button>
-      <Button onClick={()=> setData({})}> Clear </Button>
+        <Button onClick={()=> setData(initialdata)}> Initiate </Button>
+        <Button onClick={()=> setData({})}> Clear </Button>
+      </div>
     </div>
   );
 }
