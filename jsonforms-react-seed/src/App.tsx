@@ -14,6 +14,7 @@ import {
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
 import { makeStyles } from '@material-ui/core/styles';
+import { Text } from 'react-native';
 
 const useStyles = makeStyles((_theme) => ({
   container: {
@@ -30,33 +31,38 @@ const useStyles = makeStyles((_theme) => ({
     borderRadius: '0.25em',
     backgroundColor: '#cecece',
     marginBottom: '1rem',
+    padding: "1rem"
   },
-  resetButton: {
+  button: {
     margin: 'auto',
     display: 'block',
   },
-  demoform: {
+  form: {
     margin: 'auto',
     padding: '1rem',
   },
 }));
 
-const initialData = {
-  name: 'Send email to Adrian',
-  description: 'Confirm if you have passed the subject\nHereby ...',
-  done: true,
-  recurrence: 'Daily',
-  rating: 3,
-};
 
+//    Req. Parameters
+//initial Data of the jsonform
+const initialData = {};
+//initla errors
+let initialErrors: Array<{message: string, dataPath: string}> = [];
+
+//    Renderer set
 const renderers = [
   ...materialRenderers,
   //register custom renderers
   { tester: ratingControlTester, renderer: RatingControl },
 ];
 
+//    Forms App
 const App = () => {
-  const classes = useStyles();
+
+  const classes = useStyles();  //for user defined css styles
+
+  //    Form data hooks
   const [displayDataAsString, setDisplayDataAsString] = useState('');
   const [jsonformsData, setJsonformsData] = useState<any>(initialData);
 
@@ -64,16 +70,33 @@ const App = () => {
     setDisplayDataAsString(JSON.stringify(jsonformsData, null, 2));
   }, [jsonformsData]);
 
+
+  //   FormsData functions
+  //To clear the form data
   const clearData = () => {
     setJsonformsData({});
   };
+  //To set form data
+  let setData = (community: string) => {
+    var data = require("../src/apiFiles/"+community+"-api.json");
+    setJsonformsData(data);
+  }
+
+  //    Validation Error Hooks
+  const [validationErrors, setValidationErrors] = useState(initialErrors);
+
+  //  ValidationErrors Functions
+  //to record the errors from event emmiter
+  let recordErrors = (errors: any) => {
+    setValidationErrors(errors);
+  }
 
   return (
     <Fragment>
       <div className='App'>
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to JSON Forms with React</h1>
+          <h1 className='App-title'>API Generator</h1>
           <p className='App-intro'>More Forms. Less Code.</p>
         </header>
       </div>
@@ -85,33 +108,68 @@ const App = () => {
         className={classes.container}
       >
         <Grid item sm={6}>
+
           <Typography variant={'h3'} className={classes.title}>
             Bound data
           </Typography>
-          <div className={classes.dataContent}>
-            <pre id='boundData'>{displayDataAsString}</pre>
+          
+          <div id='boundData' className={classes.dataContent}>
+            <Text>{displayDataAsString}</Text>
           </div>
-          <Button
-            className={classes.resetButton}
-            onClick={clearData}
-            color='primary'
-            variant='contained'
-          >
-            Clear data
-          </Button>
+
+          <div className={classes.container}>
+            <Button
+              className={classes.button}
+              onClick={()=> setData('weimarnetz')}
+              color='primary'
+              variant='contained'
+            >
+              Set data
+            </Button>
+            <br/>
+            <Button
+              className={classes.button}
+              onClick={clearData}
+              color='primary'
+              variant='contained'
+            >
+              Clear data
+            </Button>
+          </div>
+
+          <Typography variant={'h3'} className={classes.title}>
+            Validation
+          </Typography>
+
+          <div className={classes.dataContent}>
+            <Text>{validationErrors.map(d => <li key= {d.dataPath}>{d.dataPath}:{d.message}</li>)}</Text>
+          </div>
+
         </Grid>
+
         <Grid item sm={6}>
           <Typography variant={'h3'} className={classes.title}>
-            Rendered form
+            Generator form
           </Typography>
-          <div className={classes.demoform}>
+          <div className={classes.form}>
+            <Button
+              className={classes.button}
+              color='primary'
+              variant='contained'
+            >Generate API FILE</Button>
             <JsonForms
               schema={schema}
               uischema={uischema}
               data={jsonformsData}
               renderers={renderers}
               cells={materialCells}
-              onChange={({ errors, data }) => setJsonformsData(data)}
+              onChange={({ errors, data }) => {
+                  setJsonformsData(data);
+                  recordErrors(errors);
+                  if (Object.keys(jsonformsData).length === 0) return recordErrors([]);
+                }
+              }
+              validationMode={"ValidateAndShow"}
             />
           </div>
         </Grid>

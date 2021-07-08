@@ -2,54 +2,186 @@
   "type": "VerticalLayout",
   "elements": [
     {
-      "type": "Control",
-      "label": "Completed",
-      "scope": "#/properties/done"
-    },
-    {
-      "type": "Control",
-      "scope": "#/properties/name"
-    },
-    {
       "type": "HorizontalLayout",
       "elements": [
         {
           "type": "Control",
-          "scope": "#/properties/due_date"
+          "scope": "#/properties/name"
         },
         {
           "type": "Control",
-          "scope": "#/properties/rating"
+          "scope": "#/properties/url"
         }
       ]
     },
     {
-      "type": "HorizontalLayout",
+      "type": "Group",
+      "label": "Location",
       "elements": [
         {
-          "type": "Control",
-          "scope": "#/properties/recurrence"
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/city"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/country"
+            }         
+          ]
         },
         {
-          "type": "Control",
-          "scope": "#/properties/recurrence_interval",
-          "rule": {
-            "effect": "HIDE",
-            "condition": {
-              "type": "LEAF",
-              "scope": "#/properties/recurrence",
-              "expectedValue": "Never"
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/address/properties/name"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/address/properties/street"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/address/properties/zipcode"
             }
-          }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/lat"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/location/properties/lon"
+            }
+          ]
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/location/properties/additionalLocations"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Contact",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/email"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/phone"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/facebook"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/identica"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/irc"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/jabber"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/ml"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/googleplus"
+            }
+          ]
+        },
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/matrix"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/twitter"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/contact/properties/webform"
+            }
+          ]
         }
       ]
     },
     {
       "type": "Control",
-      "scope": "#/properties/description",
-      "options": {
-        "multi": true
-      }
+      "scope": "#/properties/metacommunity"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/state"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/services"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/timeline"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/feeds"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/nodeMaps"
+    },
+    {
+      "type": "Control",
+      "label": "Social Projects",
+      "scope": "#/properties/socialprojects"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/support"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/privacy"
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/techDetails"
     }
   ]
 }
