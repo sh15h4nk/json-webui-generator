@@ -16,6 +16,7 @@ import ratingControlTester from './ratingControlTester';
 import { makeStyles } from '@material-ui/core/styles';
 import { Text } from 'react-native';
 import * as React from 'react';
+import Select from 'react-select'     
 
 const useStyles = makeStyles((_theme) => ({
   container: {
@@ -102,7 +103,7 @@ const App = () => {
   //creating a refernce for validation error div
   const errorToFocus = React.createRef<HTMLDivElement>();
 
-
+  //to validate the data and generate the json file
   let generateFile = async () => {
     if (validationErrors.length === 0 && Object.keys(jsonformsData).length !== 0) {
       const fileName = "yourapi";
@@ -119,6 +120,29 @@ const App = () => {
     }
     if(errorToFocus.current) errorToFocus.current.scrollIntoView({ behavior: "smooth", block: "nearest" })
     console.log("Can't generate");
+  }
+
+  //fetching all the API files
+  const [comminutiesFiles, setCommunitiesFiles ] = useState([]);
+  const fetchApiFiles = () => {
+    fetch("https://api.freifunk.net/data/ffSummarizedDir.json")
+      .then(response => response.json())
+      .then(data => setCommunitiesFiles(data))
+  }
+  useEffect( () => {
+    fetchApiFiles()
+  },[])
+  
+  //list of communities to select
+  const communities: Array<{value: string, label: string}> = []
+  Object.keys(comminutiesFiles).sort().forEach((comm)=> {
+    communities.push({ value: comm, label: comm})
+  })
+
+  //to load the data into the form
+  let loadData = (community: string) => {
+    console.log(community)
+    // setJsonformsData(comminutiesFiles[community]);
   }
 
   return (
@@ -140,9 +164,20 @@ const App = () => {
         <Grid item sm={6}>
 
           <Typography variant={'h3'} className={classes.title}>
+            Load Data
+          </Typography>
+
+          <div className={classes.container}>
+            <Select
+              options={communities}
+              onChange={() => {loadData(this.value)}}
+            />
+          </div>
+
+          <Typography variant={'h3'} className={classes.title}>
             Bound data
           </Typography>
-          
+
           <div id='boundData' className={classes.dataContent}>
             <Text>{displayDataAsString}</Text>
           </div>
