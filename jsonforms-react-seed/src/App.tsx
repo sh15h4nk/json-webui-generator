@@ -15,6 +15,7 @@ import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
 import { makeStyles } from '@material-ui/core/styles';
 import { Text } from 'react-native';
+import * as React from 'react';
 
 const useStyles = makeStyles((_theme) => ({
   container: {
@@ -30,6 +31,13 @@ const useStyles = makeStyles((_theme) => ({
     justifyContent: 'center',
     borderRadius: '0.25em',
     backgroundColor: '#cecece',
+    marginBottom: '1rem',
+    padding: "1rem"
+  },
+  buttonLayout: {
+    display: 'flex',
+    justifyContent: 'center',
+    borderRadius: '0.25em',
     marginBottom: '1rem',
     padding: "1rem"
   },
@@ -91,6 +99,28 @@ const App = () => {
     setValidationErrors(errors);
   }
 
+  //creating a refernce for validation error div
+  const errorToFocus = React.createRef<HTMLDivElement>();
+
+
+  let generateFile = async () => {
+    if (validationErrors.length === 0 && Object.keys(jsonformsData).length !== 0) {
+      const fileName = "yourapi";
+      const json = JSON.stringify(jsonformsData);
+      const blob = new Blob([json],{type:'application/json'});
+      const href = await URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = href;
+      link.download = fileName + ".json";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      return console.log("generated");
+    }
+    if(errorToFocus.current) errorToFocus.current.scrollIntoView({ behavior: "smooth", block: "nearest" })
+    console.log("Can't generate");
+  }
+
   return (
     <Fragment>
       <div className='App'>
@@ -117,7 +147,7 @@ const App = () => {
             <Text>{displayDataAsString}</Text>
           </div>
 
-          <div className={classes.container}>
+          <div className={classes.buttonLayout}>
             <Button
               className={classes.button}
               onClick={()=> setData('weimarnetz')}
@@ -137,12 +167,14 @@ const App = () => {
             </Button>
           </div>
 
-          <Typography variant={'h3'} className={classes.title}>
-            Validation
-          </Typography>
+          <div ref={errorToFocus}>
+            <Typography variant={'h3'} className={classes.title}>
+              Validation
+            </Typography>
 
-          <div className={classes.dataContent}>
-            <Text>{validationErrors.map(d => <li key= {d.dataPath}>{d.dataPath}:{d.message}</li>)}</Text>
+            <div className={classes.dataContent}>
+              <Text>{validationErrors.map(d => <li key= {d.dataPath}>{d.dataPath}:{d.message}</li>)}</Text>
+            </div>
           </div>
 
         </Grid>
@@ -154,6 +186,7 @@ const App = () => {
           <div className={classes.form}>
             <Button
               className={classes.button}
+              onClick={generateFile}
               color='primary'
               variant='contained'
             >Generate API FILE</Button>
@@ -163,13 +196,13 @@ const App = () => {
               data={jsonformsData}
               renderers={renderers}
               cells={materialCells}
+              validationMode={"ValidateAndShow"}
               onChange={({ errors, data }) => {
                   setJsonformsData(data);
                   recordErrors(errors);
-                  if (Object.keys(jsonformsData).length === 0) return recordErrors([]);
+                  if (Object.keys(jsonformsData).length === 0) recordErrors([]);
                 }
               }
-              validationMode={"ValidateAndShow"}
             />
           </div>
         </Grid>
