@@ -140,9 +140,9 @@ const App = () => {
   })
 
   //to load the data into the form
-  let loadData = (community: string) => {
-    console.log(community)
-    // setJsonformsData(comminutiesFiles[community]);
+  let loadData = (community: any) => {
+    console.log(community.value)
+    setJsonformsData(comminutiesFiles[community.value]);
   }
 
   return (
@@ -170,7 +170,7 @@ const App = () => {
           <div className={classes.container}>
             <Select
               options={communities}
-              onChange={() => {loadData(this.value)}}
+              onChange={community => loadData(community)}
             />
           </div>
 
