@@ -13,6 +13,10 @@ import {
 } from '@jsonforms/material-renderers';
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
+
+import LocationControl from './LocationControl';
+import locationControlTester from './locationControlTester';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Text } from 'react-native';
 import * as React from 'react';
@@ -64,6 +68,7 @@ const renderers = [
   ...materialRenderers,
   //register custom renderers
   { tester: ratingControlTester, renderer: RatingControl },
+  { tester: locationControlTester, renderer: LocationControl },
 ];
 
 //    Forms App
@@ -85,11 +90,6 @@ const App = () => {
   const clearData = () => {
     setJsonformsData({});
   };
-  //To set form data
-  let setData = (community: string) => {
-    var data = require("../src/apiFiles/"+community+"-api.json");
-    setJsonformsData(data);
-  }
 
   //    Validation Error Hooks
   const [validationErrors, setValidationErrors] = useState(initialErrors);
@@ -124,13 +124,13 @@ const App = () => {
 
   //fetching all the API files
   const [comminutiesFiles, setCommunitiesFiles ] = useState([]);
-  const fetchApiFiles = () => {
-    fetch("https://api.freifunk.net/data/ffSummarizedDir.json")
+  const fetchCommunities = () => {
+    fetch("https://raw.githubusercontent.com/freifunk/directory.api.freifunk.net/master/directory.json")
       .then(response => response.json())
       .then(data => setCommunitiesFiles(data))
   }
   useEffect( () => {
-    fetchApiFiles()
+    fetchCommunities();
   },[])
   
   //list of communities to select
@@ -141,8 +141,12 @@ const App = () => {
 
   //to load the data into the form
   let loadData = (community: any) => {
-    console.log(community.value)
-    setJsonformsData(comminutiesFiles[community.value]);
+    // console.log(community.value)
+    fetch("https://freifunk.net/api/generator/php-simple-proxy/ba-simple-proxy.php?url="+comminutiesFiles[community.value])
+      .then(response => response.json())
+      .then(data => setJsonformsData(data['contents']))
+      // .then(con => console.log(con))
+    // setJsonformsData(comminutiesFiles[community.value]);
   }
 
   return (
@@ -183,15 +187,6 @@ const App = () => {
           </div>
 
           <div className={classes.buttonLayout}>
-            <Button
-              className={classes.button}
-              onClick={()=> setData('weimarnetz')}
-              color='primary'
-              variant='contained'
-            >
-              Set data
-            </Button>
-            <br/>
             <Button
               className={classes.button}
               onClick={clearData}
