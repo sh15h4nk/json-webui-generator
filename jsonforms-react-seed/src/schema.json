@@ -101,6 +101,10 @@
                 "address": { "$ref": "#/definitions/address" },
                 "lat": { "$ref": "#/definitions/lat" },
                 "lon": { "$ref": "#/definitions/lon" },
+                "map": {
+                    "type": "string",
+                    "title": "Map"
+                },
                 "additionalLocations": {
                     "type": "array",
                     "title": "Additional Locations",
@@ -113,7 +117,11 @@
                             "country": { "$ref": "#/definitions/country" },
                             "address": { "$ref": "#/definitions/address" },
                             "lat": { "$ref": "#/definitions/lat" },
-                            "lon": { "$ref": "#/definitions/lon" }
+                            "lon": { "$ref": "#/definitions/lon" },
+                            "map": {
+                                "type": "string",
+                                "title": "Map"
+                            }
                         },
                         "required": ["city", "lat", "lon"]
                     }

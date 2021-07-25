@@ -63,6 +63,10 @@
         },
         {
           "type": "Control",
+          "scope": "#/properties/location/properties/map"
+        },
+        {
+          "type": "Control",
           "scope": "#/properties/location/properties/additionalLocations"
         }
       ]
