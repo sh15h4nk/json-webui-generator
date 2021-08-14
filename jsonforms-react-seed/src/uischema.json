@@ -49,21 +49,8 @@
           ]
         },
         {
-          "type": "HorizontalLayout",
-          "elements": [
-            {
-              "type": "Control",
-              "scope": "#/properties/location/properties/lat"
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/location/properties/lon"
-            }
-          ]
-        },
-        {
           "type": "Control",
-          "scope": "#/properties/location/properties/map"
+          "scope": "#/properties/location/properties/geoCode"
         },
         {
           "type": "Control",

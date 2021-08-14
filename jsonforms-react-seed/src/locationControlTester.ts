@@ -2,5 +2,5 @@ import { rankWith, scopeEndsWith } from '@jsonforms/core';
 
 export default rankWith(
 	100,
-	scopeEndsWith('map')//location picker
+	scopeEndsWith('geoCode')//location picker
 )

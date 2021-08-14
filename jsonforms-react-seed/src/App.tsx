@@ -107,6 +107,8 @@ const App = () => {
   let generateFile = async () => {
     if (validationErrors.length === 0 && Object.keys(jsonformsData).length !== 0) {
       const fileName = "yourapi";
+      let fileData = jsonformsData;
+      fileData.api = "5.0.0";
       const json = JSON.stringify(jsonformsData);
       const blob = new Blob([json],{type:'application/json'});
       const href = await URL.createObjectURL(blob);
@@ -128,6 +130,7 @@ const App = () => {
     fetch("https://raw.githubusercontent.com/freifunk/directory.api.freifunk.net/master/directory.json")
       .then(response => response.json())
       .then(data => setCommunitiesFiles(data))
+      .catch(()=> console.log("NetworkError: Can't fetch the api file"))
   }
   useEffect( () => {
     fetchCommunities();
@@ -139,12 +142,42 @@ const App = () => {
     communities.push({ value: comm, label: comm})
   })
 
+  //to update the location
+  const correctLocation = (data: any) => {
+    //deleting the api version
+    delete data.api;
+    if (!data.location)
+      return data;
+
+    if (!data.location.geoCode){
+      data.location.geoCode = { lat: data.location.lat, lon: data.location.lon }
+      delete data.location.lon;
+      delete data.location.lat;
+      //check all the additional location
+      if (!data.location.additionalLocations)
+        return data;
+      
+      data.location.additionalLocations.forEach((add: any) => {
+        if (add.geoCode)
+          return
+        add.geoCode = { lat: add.lat, lon: add.lon }
+        delete add.lat;
+        delete add.lon;
+      });
+      return data;
+    }
+  }
+
   //to load the data into the form
   let loadData = (community: any) => {
     // console.log(community.value)
     fetch("https://freifunk.net/api/generator/php-simple-proxy/ba-simple-proxy.php?url="+comminutiesFiles[community.value])
       .then(response => response.json())
-      .then(data => setJsonformsData(data['contents']))
+      .then(data => {
+        data = correctLocation(data.contents);
+        setJsonformsData(data);
+      })
+      .catch(()=> console.log("NetworkError: Can't fetch the api file"))
       // .then(con => console.log(con))
     // setJsonformsData(comminutiesFiles[community.value]);
   }
@@ -165,7 +198,7 @@ const App = () => {
         spacing={1}
         className={classes.container}
       >
-        <Grid item sm={6}>
+        <Grid item sm={5}>
 
           <Typography variant={'h3'} className={classes.title}>
             Load Data
@@ -209,7 +242,7 @@ const App = () => {
 
         </Grid>
 
-        <Grid item sm={6}>
+        <Grid item sm={7}>
           <Typography variant={'h3'} className={classes.title}>
             Generator form
           </Typography>
