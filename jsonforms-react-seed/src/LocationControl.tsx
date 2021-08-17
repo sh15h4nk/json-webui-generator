@@ -12,8 +12,8 @@ interface LocationControlProps {
 }
 
 let center = {
-  lat: 51,
-  lng: 8
+  lat: 51.1657,
+  lng: 10.4515
 }
 
 const LocationControl: React.FC<LocationControlProps> = ({ data, handleChange, path }) => {
@@ -25,7 +25,7 @@ const LocationControl: React.FC<LocationControlProps> = ({ data, handleChange, p
   }
 
   return(
-  	<MapContainer center={mapCenter} zoom={5} scrollWheelZoom={false} style={{ height: '150vh', width: '150wh' }}>
+  	<MapContainer center={mapCenter} zoom={7} scrollWheelZoom={false} style={{ height: '50vh', width: '100wh' }}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

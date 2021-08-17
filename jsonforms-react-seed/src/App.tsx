@@ -166,6 +166,8 @@ const App = () => {
       });
       return data;
     }
+
+    return data;
   }
 
   //to load the data into the form

@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.js';
 
 import L from 'leaflet';
 
+
 L.Icon.Default.imagePath='leaflet_images/';
 
 interface LocationProps {
